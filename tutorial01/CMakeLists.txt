@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(hello_window VERSION 1.0.0)
+cmake_minimum_required(VERSION 3.16)
+project(hello_window VERSION 1.0.0 LANGUAGES CXX)
 cmake_policy(SET CMP0072 NEW)
 
 find_package(OpenGL REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
 
 add_executable(hello_window
     src/main.cpp
@@ -14,6 +15,7 @@ target_include_directories(hello_window
 )
 
 target_link_libraries(hello_window
+    PRIVATE
     glfw
-    OpenGL:GL
+    OpenGL::GL
 )

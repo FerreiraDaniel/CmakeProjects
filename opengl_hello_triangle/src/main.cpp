@@ -137,7 +137,11 @@ int main()
     // Create and use the shader program
 
     
-    GLuint shaderProgram = createShaderProgram("shader.vs", "shader.fs");
+    const std::string shaderDirectory = SHADER_DIR;
+    GLuint shaderProgram = createShaderProgram(
+        (shaderDirectory + "/shader.vs").c_str(),
+        (shaderDirectory + "/shader.fs").c_str()
+    );
     glUseProgram(shaderProgram);
 
     // Main loop

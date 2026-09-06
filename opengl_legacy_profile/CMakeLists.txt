@@ -5,9 +5,9 @@ project(OpenGLExample VERSION 1.0 LANGUAGES C)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 
-add_executable(OpenGLApp main.c)
+add_executable(opengl_legacy_profile main.c)
 
-target_link_libraries(OpenGLApp
+target_link_libraries(opengl_legacy_profile
     PRIVATE
     OpenGL::GL
     glfw
